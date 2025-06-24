@@ -15,6 +15,8 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { authClient } from "@/lib/auth-client";
+import { REGEXP_ONLY_DIGITS } from "input-otp";
+import { Loader2 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
@@ -61,6 +63,7 @@ export default function VerifyReuest() {
             onChange={(value) => setOtp(value)}
             maxLength={6}
             className="gap-2"
+            pattern={REGEXP_ONLY_DIGITS}
           >
             <InputOTPGroup>
               <InputOTPSlot index={0} />
@@ -84,7 +87,14 @@ export default function VerifyReuest() {
           disabled={emailPending || !isOtpCompleted}
           className="w-full"
         >
-          Verify Account
+          {emailPending ? (
+            <>
+              <Loader2 className="size-4 animate-spin" />
+              <span>Loading...</span>
+            </>
+          ) : (
+            "Verify Account"
+          )}
         </Button>
       </CardContent>
     </Card>
