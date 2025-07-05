@@ -408,15 +408,12 @@ export async function deleteChapter({
     });
 
     await prisma.$transaction([
-      prisma.lesson.deleteMany({
-        where: { chapterID },
-      }),
+      ...updates,
       prisma.chapter.delete({
         where: {
           id: chapterID,
         },
       }),
-      ...updates,
     ]);
 
     revalidatePath(`/admin/courses/${courseID}/edit`);

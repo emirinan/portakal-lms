@@ -121,7 +121,7 @@ model Chapter {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  Course Course @relation(fields: [courseID], references: [id])
+  Course Course @relation(fields: [courseID], references: [id], onDelete: Cascade)
   courseID String
 
   lessons Lesson[]
@@ -138,6 +138,6 @@ model Lesson {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  Chapter Chapter @relation(fields: [chapterID], references: [id])
+  Chapter Chapter @relation(fields: [chapterID], references: [id], onDelete: Cascade)
   chapterID String
 }
