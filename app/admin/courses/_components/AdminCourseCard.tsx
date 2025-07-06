@@ -30,7 +30,6 @@ export function AdminCourseCard({ data }: iAppProps) {
   const thumbnailUrl = useConstructUrl(data.fileKey);
   return (
     <Card className="group relative py-0 gap-0">
-      {/* absolute dropdown */}
       <div className="absolute top-2 right-2 z-10">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
