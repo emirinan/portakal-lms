@@ -1,42 +1,15 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
-import { buttonVariants } from "@/components/ui/button";
-import Link from "next/link";
-import { AlertTriangle, ArrowLeft } from "lucide-react";
+import { NotFound, Illustration } from "@/components/ui/not-found";
 
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <Card className="max-w-md w-full shadow-lg">
-        <CardHeader className="text-center">
-          <div className="bg-yellow-100 rounded-full p-4 w-fit mx-auto">
-            <AlertTriangle className="size-16 text-yellow-500" />
-          </div>
-          <CardTitle className="text-3xl mt-4">404</CardTitle>
-          <CardDescription className="max-w-xs mx-auto mt-2">
-            <span className="block font-semibold mt-4 mb-1">
-              Page Not Found
-            </span>
-            <span className="block text-sm text-muted-foreground">
-              The page you are looking for does not exist or has been moved.
-            </span>
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Link
-            href="/"
-            className={buttonVariants({ className: "w-full mt-4" })}
-          >
-            <ArrowLeft className="size-4" />
-            Back to Home
-          </Link>
-        </CardContent>
-      </Card>
+    <div className="relative flex flex-col w-full justify-center min-h-svh bg-background p-6 md:p-10">
+      <div className="relative max-w-5xl mx-auto w-full">
+        <Illustration className="absolute inset-0 w-full h-[50vh] opacity-[0.04] dark:opacity-[0.03] text-foreground" />
+        <NotFound
+          title="Page not found"
+          description="Looks like you're lost buddy 🙂"
+        />
+      </div>
     </div>
   );
 }

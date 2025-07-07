@@ -21,7 +21,7 @@ export function Navbar() {
       <div className="container flex min-h-16 items-center mx-auto px-4 md:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2 mr-4">
           <Image src={Logo} alt="Logo" className="size-9" />
-          <span className="font-bold">Portakal LMS.</span>
+          <span className="font-bold">Portakal LMS</span>
         </Link>
 
         {/* Desktop Navigation */}

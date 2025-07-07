@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portakal LMS.",
+  title: "Portakal",
   description: "Portakal is a learning management system",
 };
 
