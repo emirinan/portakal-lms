@@ -19,7 +19,7 @@ export const auth = betterAuth({
   plugins: [
     emailOTP({
       async sendVerificationOTP({ email, otp }) {
-        const { data, error } = await resend.emails.send({
+        await resend.emails.send({
           from: "Portakal LMS. <onboarding@resend.dev>",
           to: [email],
           subject: "Portakal LMS. - Verify your email",

@@ -18,10 +18,18 @@ import { authClient } from "@/lib/auth-client";
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { Loader2 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState, useTransition } from "react";
+import { Suspense, useState, useTransition } from "react";
 import { toast } from "sonner";
 
-export default function VerifyReuest() {
+export default function VerifyRequestRoute() {
+  return (
+    <Suspense>
+      <VerifyReqest />
+    </Suspense>
+  );
+}
+
+function VerifyReqest() {
   const router = useRouter();
   const [otp, setOtp] = useState("");
   const [emailPending, startTransition] = useTransition();

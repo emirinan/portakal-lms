@@ -33,7 +33,7 @@ export function AdminCourseCard({ data }: iAppProps) {
       <div className="absolute top-2 right-2 z-10">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="secondary" size="icon">
+            <Button size="icon">
               <MoreVertical className="size-4" />
             </Button>
           </DropdownMenuTrigger>

@@ -1,6 +1,5 @@
 "use server";
 
-import { requireAdmin } from "@/app/data/admin/require-admin";
 import { requireUser } from "@/app/data/user/require-user";
 import arcjet, { fixedWindow } from "@/lib/arcjet";
 import { prisma } from "@/lib/db";

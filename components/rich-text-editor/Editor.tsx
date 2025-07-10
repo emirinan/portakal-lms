@@ -3,9 +3,13 @@
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Menubar } from "./Menubar";
-import Textalign, { TextAlign } from "@tiptap/extension-text-align";
+import { TextAlign } from "@tiptap/extension-text-align";
+interface FieldProps {
+  value?: string;
+  onChange: (value: string) => void;
+}
 
-export function RichTextEditor({ field }: { field: any }) {
+export function RichTextEditor({ field }: { field: FieldProps }) {
   const editor = useEditor({
     extensions: [
       StarterKit,

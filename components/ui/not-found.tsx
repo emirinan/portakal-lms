@@ -1,5 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface NotFoundProps {
   title?: string;
@@ -31,15 +32,15 @@ export function NotFound({
       </p>
       <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-y-3 gap-x-4">
         <Button asChild className="group">
-          <a href="/">
+          <Link href="/">
             <ArrowLeft
               className="me-2 ms-0 opacity-60 transition-transform group-hover:-translate-x-0.5"
               size={16}
               strokeWidth={2}
               aria-hidden="true"
             />
-            Let's go Home
-          </a>
+            Let&apos;s go Home
+          </Link>
         </Button>
       </div>
     </div>

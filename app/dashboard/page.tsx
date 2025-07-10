@@ -2,7 +2,6 @@ import { EmptyState } from "@/components/general/EmptyState";
 import { getAllCourses } from "../data/course/get-all-courses";
 import { getEnrolledCourses } from "../data/user/get-enrolled-courses";
 import { PublicCourseCard } from "../(public)/_components/PublicCourseCard";
-import Link from "next/link";
 import { CourseProgressCard } from "./_components/CourseProgressCard";
 
 export default async function DashboardPage() {
@@ -20,12 +19,14 @@ export default async function DashboardPage() {
         </p>
       </div>
       {enrolledCourses.length === 0 ? (
-        <EmptyState
-          title="No courses purchased"
-          description="You have not purchased courses yet"
-          buttonText="Browse Courses"
-          href="/courses"
-        />
+        <div className="flex justify-center items-center min-h-[300px]">
+          <EmptyState
+            title="No courses purchased"
+            description="You have not purchased courses yet"
+            buttonText="Browse Courses"
+            href="/courses"
+          />
+        </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {enrolledCourses.map((course) => (
@@ -47,12 +48,14 @@ export default async function DashboardPage() {
               ({ Course: enrolled }) => enrolled.id === course.id
             )
         ).length === 0 ? (
-          <EmptyState
-            title="No courses available"
-            description="You have already purchased all available courses"
-            buttonText="Browse Courses"
-            href="/courses"
-          />
+          <div className="flex justify-center items-center min-h-[300px]">
+            <EmptyState
+              title="No courses available"
+              description="You have already purchased all available courses"
+              buttonText="Browse Courses"
+              href="/courses"
+            />
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {courses

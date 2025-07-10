@@ -30,7 +30,6 @@ import {
   FileText,
   GripVertical,
   GripVerticalIcon,
-  Trash2,
 } from "lucide-react";
 import { CollapsibleTrigger } from "@radix-ui/react-collapsible";
 import { Button } from "@/components/ui/button";
